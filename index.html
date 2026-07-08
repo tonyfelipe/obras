@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ROCHA ACABAMENTOS OBRAS EM GERAL</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Berkshire+Swash&family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --verde-sagui: #dbe6d1;
+    --verde-escuro: #a9c19a;
+    --cacau: #4a3524;
+    --cacau-claro: #6e5136;
+    --creme: #fbf6ec;
+    --rosa: #e9c7c3;
+    --dourado: #b8935a;
+  }
+
+  *{ margin:0; padding:0; box-sizing:border-box; }
+
+  html{ scroll-behavior:smooth; }
+
+  body{
+    font-family:'Nunito', sans-serif;
+    background:var(--creme);
+    color:var(--cacau);
+    overflow-x:hidden;
+  }
+
+  @media (prefers-reduced-motion: reduce){
+    *{ animation-duration:0.01ms !important; transition-duration:0.01ms !important; }
+  }
+
+  a{ color:inherit; text-decoration:none; }
+
+  .hero{
+    min-height:100vh;
+    background:
+      radial-gradient(circle at 20% 15%, rgba(255,255,255,0.35), transparent 45%),
+      linear-gradient(160deg, var(--verde-sagui) 0%, var(--verde-escuro) 100%);
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    justify-content:center;
+    text-align:center;
+    padding:6vh 6vw;
+    position:relative;
+  }
+
+  .coco-dots{
+    position:absolute;
+    inset:0;
+    background-image: radial-gradient(rgba(255,255,255,0.5) 1.5px, transparent 1.5px);
+    background-size: 26px 26px;
+    opacity:0.35;
+    pointer-events:none;
+  }
+
+  .heart-bow{
+    width:110px;
+    height:auto;
+    margin-bottom:1.2rem;
+    animation: floatIn 1.1s ease-out both;
+  }
+
+  @keyframes floatIn{
+    from{ opacity:0; transform:translateY(-18px) scale(0.9); }
+    to{ opacity:1; transform:translateY(0) scale(1); }
+  }
+
+  .brand{
+    font-family:'Berkshire Swash', cursive;
+    font-size:clamp(2.8rem, 9vw, 5.5rem);
+    line-height:1;
+    color:var(--cacau);
+    position:relative;
+    animation: floatIn 1.1s ease-out 0.15s both;
+  }
+
+  .tagline{
+    margin-top:0.8rem;
+    letter-spacing:0.35em;
+    font-weight:800;
+    font-size:0.85rem;
+    color:var(--cacau-claro);
+    animation: floatIn 1.1s ease-out 0.3s both;
+  }
+
+  .hero-sub{
+    margin-top:1.6rem;
+    max-width:32ch;
+    font-size:1.05rem;
+    color:var(--cacau-claro);
+    animation: floatIn 1.1s ease-out 0.45s both;
+  }
+
+  .cta{
+    margin-top:2.2rem;
+    display:inline-flex;
+    gap:0.6rem;
+    align-items:center;
+    background:var(--cacau);
+    color:var(--creme);
+    padding:0.85rem 2rem;
+    border-radius:999px;
+    font-weight:700;
+    letter-spacing:0.03em;
+    box-shadow:0 8px 20px rgba(74,53,36,0.25);
+    transition:transform 0.25s ease, box-shadow 0.25s ease;
+    animation: floatIn 1.1s ease-out 0.6s both;
+  }
+  .cta:hover{ transform:translateY(-3px); box-shadow:0 12px 26px rgba(74,53,36,0.32); }
+  .cta:focus-visible{ outline:3px solid var(--dourado); outline-offset:3px; }
+
+  .scroll-cue{
+    position:absolute;
+    bottom:28px;
+    font-size:0.75rem;
+    letter-spacing:0.2em;
+    color:var(--cacau-claro);
+    animation: bob 2s ease-in-out infinite;
+  }
+  @keyframes bob{ 0%,100%{ transform:translateY(0); } 50%{ transform:translateY(6px); } }
+
+  section{ padding:6rem 6vw; }
+  .section-inner{ max-width:1000px; margin:0 auto; }
+  .eyebrow{
+    font-weight:800; letter-spacing:0.3em; font-size:0.75rem;
+    color:var(--dourado); margin-bottom:0.8rem; text-transform:uppercase;
+  }
+  h2{
+    font-family:'Berkshire Swash', cursive;
+    font-size:clamp(2rem, 4vw, 3rem);
+    color:var(--cacau);
+    margin-bottom:1.2rem;
+  }
+  p{ line-height:1.7; color:var(--cacau-claro); font-size:1.02rem; }
+
+  .sobre{ background:var(--creme); }
+  .sobre-grid{
+    display:grid;
+    grid-template-columns: 1.1fr 1fr;
+    gap:3rem;
+    align-items:center;
+  }
+  .sobre-card{
+    background:var(--rosa);
+    border-radius:28px;
+    padding:2.4rem;
+    position:relative;
+    overflow:hidden;
+  }
+  .sobre-card::after{
+    content:"";
+    position:absolute; right:-40px; bottom:-40px;
+    width:160px; height:160px; border-radius:50%;
+    background:rgba(255,255,255,0.3);
+  }
+  .sobre-card p{ color:var(--cacau); font-weight:600; font-size:1.15rem; position:relative; z-index:1; }
+
+  @media (max-width: 760px){
+    .sobre-grid{ grid-template-columns:1fr; }
+  }
+
+  .sabores{ background:var(--verde-sagui); }
+  .sabores-header{ text-align:center; max-width:560px; margin:0 auto 3rem; }
+  .sabores-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit, minmax(210px,1fr));
+    gap:1.6rem;
+  }
+  .sabor-card{
+    background:var(--creme);
+    border-radius:22px;
+    padding:2rem 1.4rem;
+    text-align:center;
+    box-shadow:0 6px 18px rgba(74,53,36,0.08);
+    transition:transform 0.25s ease;
+  }
+  .sabor-card:hover{ transform:translateY(-6px); }
+  .sabor-icon{
+    width:52px; height:52px; margin:0 auto 1rem;
+    display:flex; align-items:center; justify-content:center;
+    border-radius:50%; background:var(--verde-sagui);
+    font-size:1.5rem;
+  }
+  .sabor-card h3{
+    font-family:'Berkshire Swash', cursive;
+    font-size:1.4rem; margin-bottom:0.4rem; color:var(--cacau);
+  }
+  .sabor-card p{ font-size:0.92rem; }
+
+  .faixa{
+    background:var(--cacau);
+    color:var(--creme);
+    text-align:center;
+    padding:4.5rem 6vw;
+  }
+  .faixa p{
+    color:var(--creme);
+    font-family:'Berkshire Swash', cursive;
+    font-size:clamp(1.4rem, 3vw, 2rem);
+    max-width:720px;
+    margin:0 auto;
+    line-height:1.5;
+  }
+
+  .contato{ background:var(--creme); text-align:center; }
+  .contato .section-inner{ max-width:600px; }
+  .redes{
+    display:flex; gap:1rem; justify-content:center; margin-top:2rem; flex-wrap:wrap;
+  }
+  .rede{
+    border:2px solid var(--cacau);
+    padding:0.7rem 1.6rem;
+    border-radius:999px;
+    font-weight:700;
+    transition:background 0.25s ease, color 0.25s ease;
+  }
+  .rede:hover{ background:var(--cacau); color:var(--creme); }
+  .rede:focus-visible{ outline:3px solid var(--dourado); outline-offset:3px; }
+
+  footer{
+    text-align:center;
+    padding:2rem;
+    font-size:0.85rem;
+    color:var(--cacau-claro);
+    background:var(--verde-sagui);
+  }
+</style>
+</head>
+<body>
+
+<section class="hero">
+  <div class="coco-dots"></div>
+  <svg class="heart-bow" viewBox="0 0 200 120" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+    <path d="M10 40 L55 20 L55 90 L10 70 Z" fill="#4a3524"/>
+    <path d="M190 40 L145 20 L145 90 L190 70 Z" fill="#4a3524"/>
+    <path d="M100 95 C100 95 55 65 55 40 C55 20 80 15 100 35 C120 15 145 20 145 40 C145 65 100 95 100 95 Z" fill="#4a3524"/>
+  </svg>
+  <h1 class="brand">Doce Lembrança</h1>
+  <p class="tagline">BALAS DE COCO</p>
+  <p class="hero-sub">Receita de família, coco fresco e o carinho de sempre em cada bala.</p>
+  <a class="cta" href="#contato">Fazer pedido</a>
+  <span class="scroll-cue">role para saber mais ↓</span>
+</section>
+
+<section class="sobre" id="sobre">
+  <div class="section-inner sobre-grid">
+    <div>
+      <p class="eyebrow">Nossa história</p>
+      <h2>Coco, tempo e carinho</h2>
+      <p>A Doce Lembrança nasceu na cozinha de casa, com panela de fundo grosso e coco ralado na hora. Cada bala é cozida lentamente até virar aquela lembrança gostosa de infância — doce, cremosa e cheia de coco de verdade.</p>
+    </div>
+    <div class="sobre-card">
+      <p>"Sem conservantes, sem pressa. Só coco, açúcar e leite, do jeito que se fazia antigamente."</p>
+    </div>
+  </div>
+</section>
+
+<section class="sabores" id="sabores">
+  <div class="section-inner">
+    <div class="sabores-header">
+      <p class="eyebrow">Sabores</p>
+      <h2>Escolha a sua bala</h2>
+    </div>
+    <div class="sabores-grid">
+      <div class="sabor-card">
+        <div class="sabor-icon">🥥</div>
+        <h3>Coco Tradicional</h3>
+        <p>A receita original, cremosa e generosa em coco.</p>
+      </div>
+      <div class="sabor-card">
+        <div class="sabor-icon">🍫</div>
+        <h3>Coco com Chocolate</h3>
+        <p>Coco cremoso coberto com chocolate meio amargo.</p>
+      </div>
+      <div class="sabor-card">
+        <div class="sabor-icon">☕</div>
+        <h3>Coco Queimado</h3>
+        <p>Toque de doce de leite queimado no ponto certo.</p>
+      </div>
+      <div class="sabor-card">
+        <div class="sabor-icon">🍋</div>
+        <h3>PINTURA</h3>
+        <p>PISOS PORCELANATO.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="faixa">
+  <p>"ROCHA ACABAMENTO, EQUIPAMENTOS MODERNO."</p>
+</div>
+
+<section class="contato" id="contato">
+  <div class="section-inner">
+    <p class="eyebrow">Fale com a gente</p>
+    <h2>Peça as suas balas</h2>
+    <p>PISOS PORCELANATOS E TUDO DE OBRA. Fale com a gente e monte seu combo.</p>
+    <div class="redes">
+      <a class="rede" href="#" target="_blank" rel="noopener">Instagram</a>
+      <a class="rede" href="#" target="+5511912013520" rel="noopener">WhatsApp</a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  © 2026 Doce Lembrança — ROCHA ACABAMENTO.
+</footer>
+
+</body>
+</html>
